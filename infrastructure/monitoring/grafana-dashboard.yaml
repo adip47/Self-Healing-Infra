@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards
+  labels:
+    grafana_dashboard: "1"
+data:
+  self-healing-overview.json: |
+    {
+      "id": null,
+      "title": "Self-Healing Infra Overview",
+      "tags": ["self-healing", "monitoring"],
+      "timezone": "browser",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "Pod Restarts",
+          "targets": [
+            { "expr": "increase(kube_pod_container_status_restarts_total[5m])", "legendFormat": "{{pod}}" }
+          ]
+        },
+        {
+          "type": "graph",
+          "title": "CPU Usage per Pod",
+          "targets": [
+            { "expr": "rate(container_cpu_usage_seconds_total{image!=\"\"}[5m])", "legendFormat": "{{pod}}" }
+          ]
+        }
+      ],
+      "schemaVersion": 26,
+      "version": 1
+    }
