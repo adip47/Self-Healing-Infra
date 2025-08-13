@@ -1,0 +1,5 @@
+apiVersion: v2
+name: netflix-microservices
+description: Umbrella chart for Netflix-like microservices
+type: application
+version: 0.1.0

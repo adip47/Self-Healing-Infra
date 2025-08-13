@@ -1,0 +1,69 @@
+{{- $cfg := index .Values "auth_service" -}}
+{{- if $cfg.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+  namespace: apps
+  labels:
+    app: auth-service
+spec:
+  replicas: {{ $cfg.replicaCount }}
+  selector:
+    matchLabels:
+      app: auth-service
+  template:
+    metadata:
+      labels:
+        app: auth-service
+    spec:
+      containers:
+        - name: auth-service
+          image: "{{ $cfg.image.repository }}:{{ $cfg.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: {{ $cfg.resources.limits.cpu | quote }}
+              memory: {{ $cfg.resources.limits.memory | quote }}
+            requests:
+              cpu: {{ $cfg.resources.requests.cpu | quote }}
+              memory: {{ $cfg.resources.requests.memory | quote }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service
+  namespace: apps
+spec:
+  type: {{ $cfg.service.type }}
+  selector:
+    app: auth-service
+  ports:
+    - name: http
+      port: {{ $cfg.service.port }}
+      targetPort: 8080
+---
+{{- if $cfg.hpa.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: auth-service-hpa
+  namespace: apps
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: auth-service
+  minReplicas: {{ $cfg.hpa.minReplicas }}
+  maxReplicas: {{ $cfg.hpa.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ $cfg.hpa.cpu.averageUtilization }}
+{{- end }}
+{{- end }}

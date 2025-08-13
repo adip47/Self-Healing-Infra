@@ -1,0 +1,15 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: user-service-queue-scaler
+  namespace: apps
+spec:
+  scaleTargetRef:
+    name: user-service
+  minReplicaCount: 2
+  maxReplicaCount: 20
+  triggers:
+    - type: cpu
+      metadata:
+        type: Utilization
+        value: "70"

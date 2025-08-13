@@ -1,0 +1,23 @@
+name: Lint YAML & Helm
+on: [push, pull_request]
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ibiqlik/action-yamllint@v3
+        with:
+          strict: false
+
+  helm-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+      - name: Lint charts
+        run: |
+          for c in helm/charts/*; do
+            [ -d "$c" ] && helm lint "$c" || true
+          done

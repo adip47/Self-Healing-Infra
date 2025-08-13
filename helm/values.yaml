@@ -1,0 +1,94 @@
+user_service:
+  enabled: true
+  image:
+    repository: ghcr.io/YOUR_GH_USERNAME/user-service
+    tag: "latest"
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+  hpa:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 10
+    cpu:
+      averageUtilization: 70
+
+
+auth_service:
+  enabled: true
+  image:
+    repository: ghcr.io/YOUR_GH_USERNAME/auth-service
+    tag: "latest"
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+  hpa:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 10
+    cpu:
+      averageUtilization: 70
+
+
+video_service:
+  enabled: true
+  image:
+    repository: ghcr.io/YOUR_GH_USERNAME/video-service
+    tag: "latest"
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+  hpa:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 10
+    cpu:
+      averageUtilization: 70
+
+
+watch_history_service:
+  enabled: true
+  image:
+    repository: ghcr.io/YOUR_GH_USERNAME/watch-history-service
+    tag: "latest"
+  replicaCount: 2
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+  hpa:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 10
+    cpu:
+      averageUtilization: 70

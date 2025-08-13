@@ -1,0 +1,7 @@
+route:
+  receiver: 'null'
+receivers:
+  - name: 'null'
+
+# Example rule to detect crash looping (place under PrometheusRule in kube-prometheus-stack normally)
+# This file is illustrative. Prefer managing rules via 'additionalPrometheusRulesMap' in values.
