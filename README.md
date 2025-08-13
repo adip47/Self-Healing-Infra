@@ -1,8 +1,3 @@
-Got it — let’s make your **README.md** more detailed so your project looks professional and GitHub-ready.
-Here’s an expanded version tailored for your **Self-Healing Infra with Prometheus, Grafana, and Alertmanager** setup.
-
----
-
 ```markdown
 # Self-Healing Infrastructure with Kubernetes, Prometheus, Grafana, and Alertmanager
 
