@@ -6,12 +6,12 @@ The setup automatically detects failures and triggers recovery actions, ensuring
 ---
 
 ## 📌 Features
-- **Automated Monitoring** with Prometheus
-- **Visual Dashboards** with Grafana
-- **Alerting Mechanism** via Alertmanager
-- **Custom Self-Healing Scripts** for issue remediation
-- **Helm-based Deployment** for modular configuration
-- **Configurable Alert Rules** for different severity levels
+- Automated Monitoring with Prometheus
+- Visual Dashboards with Grafana
+- Alerting Mechanism via Alertmanager
+- Custom Self-Healing Scripts for issue remediation
+- Helm-based Deployment for modular configuration
+- Configurable Alert Rules for different severity levels
 
 ---
 
