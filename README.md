@@ -30,14 +30,15 @@ README.md                           # Project documentation
 
 
 ---
-
+```
 ## 🚀 Deployment Steps
 
 ### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/your-username/Self-Healing-Infra.git
 cd Self-Healing-Infra
-````
+```
 
 ### 2️⃣ Install Prometheus & Grafana
 
