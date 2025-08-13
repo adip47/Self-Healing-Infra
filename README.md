@@ -1,7 +1,7 @@
 # Self-Healing Infrastructure with Kubernetes, Prometheus, Grafana, and Alertmanager
 
 <p align="center">
-  <img src="banner3.png" alt="Self Healing Infra" width="0%"/>
+  <img src="banner3.png" alt="Self Healing Infra" width="60%"/>
 </p>
 
 ```markdown
