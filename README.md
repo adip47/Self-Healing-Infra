@@ -130,9 +130,4 @@ Please make sure to update tests as appropriate and follow the existing coding s
 
 ```
 
----
 
-If you want, I can also give you **realistic sample contents** for `alertmanager-config.yaml`, `grafana-values.yaml`, and `prometheus-values.yaml` so they’re immediately usable and look professional in the repo. That way, your GitHub will look like a **ready-to-run self-healing infra project** instead of just placeholders.  
-
-Do you want me to prepare those now?
-```
