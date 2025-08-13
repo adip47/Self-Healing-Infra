@@ -1,5 +1,7 @@
 # Self-Healing Infrastructure with Kubernetes, Prometheus, Grafana, and Alertmanager
-banner3.png
+<p align="center">
+  <img src="banner3.png" alt="Self Healing Infra" width="0%" />
+</p>
 ```markdown
 This project demonstrates a self-healing Kubernetes infrastructure using monitoring and alerting tools.  
 The setup automatically detects failures and triggers recovery actions, ensuring minimal downtime.
