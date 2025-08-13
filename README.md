@@ -17,7 +17,6 @@ The setup automatically detects failures and triggers recovery actions, ensuring
 
 ## 📂 Project Structure
 
-```
 
 monitoring/
 │── alertmanager-config.yaml       # Alertmanager configuration (routes, receivers)
@@ -29,7 +28,6 @@ scripts/
 │── remediation.sh                  # Self-healing script triggered by alerts
 README.md                           # Project documentation
 
-````
 
 ---
 
